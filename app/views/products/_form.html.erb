@@ -1,0 +1,198 @@
+<%= form_for(@product, html: {class: 'form-horizontal'}) do |f| %>
+  <% if @product.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@product.errors.count, "error") %> prohibited this product from being saved:</h2>
+
+      <ul>
+      <% @product.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field form-group">
+    <%= f.label :code, class: 'col-sm-2 control-label' %>
+    <div class="col-sm-10">
+      <%= f.text_field :code, class: 'form-control' %>
+    </div>
+  </div>
+  <div class="field form-group">
+    <%= f.label :description, class: 'col-sm-2 control-label' %>
+    <div class="col-sm-10">
+      <%= f.text_field :description, class: 'form-control' %>
+    </div>
+  </div>
+  <div class="field form-group">
+    <%= f.label :barcode, class: 'col-sm-2 control-label' %>
+    <div class="col-sm-10">
+      <%= f.text_field :barcode, class: 'form-control' %>
+    </div>
+  </div>
+  <div class="field form-group">
+    <%= f.label :ncm, 'NCM', class: 'col-sm-2 control-label' %>
+    <div class="col-sm-10">
+      <%= f.text_field :ncm, class: 'form-control' %>
+    </div>
+  </div>
+  <div class="field form-group">
+    <%= f.label :unity, class: 'col-sm-2 control-label' %>
+    <div class="col-sm-10">
+      <%= f.text_field :unity, class: 'form-control' %>
+    </div>
+  </div>
+  <div class="field form-group">
+    <%= f.label :supplier, class: 'col-sm-2 control-label' %>
+    <div class="col-sm-10">
+      <%= f.text_field :supplier, class: 'form-control' %>
+    </div>
+  </div>
+  <div class="field form-group">
+    <%= f.label :type, class: 'col-sm-2 control-label' %>
+    <div class="col-sm-10">
+      <%= f.text_field :product_type, class: 'form-control' %>
+    </div>
+  </div>
+  <div class="field form-group">
+    <%= f.label :brand, class: 'col-sm-2 control-label' %>
+    <div class="col-sm-10">
+      <%= f.text_field :brand, class: 'form-control' %>
+    </div>
+  </div>
+  <div class="field form-group">
+    <%= f.label :weight, class: 'col-sm-2 control-label' %>
+    <div class="col-sm-10">
+      <%= f.text_field :weight, :value => number_to_currency( @product[:weight], separator: ",", delimiter: "", precision: 2, format: "%n"),
+                                :pattern => '^\\$?(([1-9](\\d*|\\d{0,2}(.\\d{3})*))|0)(\\,\\d{1,2})?$',
+                                class: 'form-control' %>
+    </div>
+  </div>
+  <div class="field form-group">
+    <%= f.label :size, class: 'col-sm-2 control-label' %>
+    <div class="col-sm-10">
+      <%= f.text_field :size, class: 'form-control' %>
+    </div>
+  </div>
+  <div class="field form-group">
+    <%= f.label :state, class: 'col-sm-2 control-label' %>
+    <div class="col-sm-10">
+      <%= f.select :current_state_id, @current_states.collect {|state| [ state.description, state.id ]}, {}, {class: 'form-control'} %>
+    </div>
+  </div>
+  <div class="field form-group">
+    <%= f.label :stock, class: 'col-sm-2 control-label' %>
+    <div class="col-sm-10">
+      <%= f.text_field :stock, :value => number_to_currency( @product[:stock], separator: ",", delimiter: "", precision: 2, format: "%n"),
+                               :pattern => '^\\$?(([1-9](\\d*|\\d{0,2}(.\\d{3})*))|0)(\\,\\d{1,2})?$',
+                               class: 'form-control' %>
+    </div>
+  </div>
+  <div class="field form-group">
+    <%= f.label :max_stock, class: 'col-sm-2 control-label' %>
+    <div class="col-sm-10">
+      <%= f.text_field :max_stock, :value => number_to_currency( @product[:max_stock], separator: ",", delimiter: "", precision: 2, format: "%n"),
+                                   :pattern => '^\\$?(([1-9](\\d*|\\d{0,2}(.\\d{3})*))|0)(\\,\\d{1,2})?$',
+                                   class: 'form-control' %>
+    </div>
+  </div>
+  <div class="field form-group">
+    <%= f.label :min_stock, class: 'col-sm-2 control-label' %>
+    <div class="col-sm-10">
+      <%= f.text_field :min_stock, :value => number_to_currency( @product[:min_stock], separator: ",", delimiter: "", precision: 2, format: "%n"),
+                                   :pattern => '^\\$?(([1-9](\\d*|\\d{0,2}(.\\d{3})*))|0)(\\,\\d{1,2})?$',
+                                   class: 'form-control' %>
+    </div>
+  </div>
+  <div class="field form-group">
+    <%= f.label :purchase_stock, class: 'col-sm-2 control-label' %>
+    <div class="col-sm-10">
+      <%= f.text_field :purchase_stock, :value => number_to_currency( @product[:purchase_stock], separator: ",", delimiter: "", precision: 2, format: "%n"),
+                                        :pattern => '^\\$?(([1-9](\\d*|\\d{0,2}(.\\d{3})*))|0)(\\,\\d{1,2})?$',
+                                        class: 'form-control' %>
+    </div>
+  </div>
+  <div class="field form-group">
+    <%= f.label :composition, class: 'col-sm-2 control-label' %>
+    <div class="col-sm-10">
+      <%= f.text_field :composition, class: 'form-control' %>
+    </div>
+  </div>
+  <div class="field form-group">
+    <%= f.label :raw_material, class: 'col-sm-2 control-label' %>
+    <div class="col-sm-10">
+      <%= f.text_field :raw_material, class: 'form-control' %>
+    </div>
+  </div>
+  <div class="field form-group">
+    <%= f.label :office_supplies, class: 'col-sm-2 control-label' %>
+    <div class="col-sm-10">
+      <%= f.text_field :office_supplies, class: 'form-control' %>
+    </div>
+  </div>
+  <div class="field form-group">
+    <%= f.label :for_sale, class: 'col-sm-2 control-label' %>
+    <div class="col-sm-10">
+      <%= f.text_field :for_sale, class: 'form-control' %>
+    </div>
+  </div>
+  <div class="field form-group">
+    <%= f.label :currency, class: 'col-sm-2 control-label' %>
+    <div class="col-sm-10">
+      <%= f.text_field :currency, class: 'form-control' %>
+    </div>
+  </div>
+  <div class="field form-group">
+    <%= f.label :observations, class: 'col-sm-2 control-label' %>
+    <div class="col-sm-10">
+      <%= f.text_field :observations, class: 'form-control' %>
+    </div>
+  </div>
+  <div class="field form-group">
+    <%= f.label :cost, class: 'col-sm-2 control-label' %>
+    <div class="col-sm-10">
+      <%= f.text_field :cost, :value => number_to_currency( @product[:cost], separator: ",", delimiter: "", precision: 2, format: "%n"),
+                              :pattern => '^\\$?(([1-9](\\d*|\\d{0,2}(.\\d{3})*))|0)(\\,\\d{1,2})?$',
+                              class: 'form-control' %>
+    </div>
+  </div>
+  <div class="field form-group">
+    <%= f.label :sale_price, class: 'col-sm-2 control-label' %>
+    <div class="col-sm-10">
+      <%= f.text_field :sale_price, :value => number_to_currency( @product[:sale_price], separator: ",", delimiter: "", precision: 2, format: "%n"),
+                                    :pattern => '^\\$?(([1-9](\\d*|\\d{0,2}(.\\d{3})*))|0)(\\,\\d{1,2})?$',
+                                    class: 'form-control' %>
+    </div>
+  </div>
+  <div class="field form-group">
+    <%= f.label :ipi, 'IPI', class: 'col-sm-2 control-label' %>
+    <div class="col-sm-10">
+      <%= f.text_field :ipi, :value => number_to_currency( @product[:ipi], separator: ",", delimiter: "", precision: 2, format: "%n"),
+                             :pattern => '^\\$?(([1-9](\\d*|\\d{0,2}(.\\d{3})*))|0)(\\,\\d{1,2})?$',
+                             class: 'form-control' %>
+    </div>
+  </div>
+  <div class="field form-group">
+    <%= f.label :category, class: 'col-sm-2 control-label' %>
+    <div class="col-sm-10">
+      <%= f.text_field :category, class: 'form-control' %>
+    </div>
+  </div>
+  <div class="field form-group">
+    <%= f.label :unity_factor, class: 'col-sm-2 control-label' %>
+    <div class="col-sm-10">
+      <%= f.text_field :unity_factor, class: 'form-control' %>
+    </div>
+  </div>
+  <div class="field form-group">
+    <%= f.label :gender, class: 'col-sm-2 control-label' %>
+    <div class="col-sm-10">
+      <%= f.text_field :gender, class: 'form-control' %>
+    </div>
+  </div>
+  <div class="actions form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <%= f.submit class: 'btn btn-success' %> |
+      <%= link_to 'Back', products_path, class: 'btn btn-primary' %>
+    </div>
+  </div>
+<% end %>

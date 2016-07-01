@@ -1,0 +1,119 @@
+<div class="page-header">
+  <h1>Products <small>Showing</small></h1>
+</div>
+
+<table class="table table-bordered table-hover table-responsive">
+  <tbody>
+    <tr>
+      <td align="right"><strong>Code:</strong></td>
+      <td><%= @product.code %></td>
+    </tr>
+    <tr>
+      <td align="right"><strong>Description:</strong></td>
+      <td><%= @product.description %></td>
+    </tr>
+    <tr>
+      <td align="right"><strong>Barcode:</strong></td>
+      <td><%= @product.barcode %></td>
+    </tr>
+    <tr>
+      <td align="right"><strong>NCM:</strong></td>
+      <td><%= @product.ncm %></td>
+    </tr>
+    <tr>
+      <td align="right"><strong>Unity:</strong></td>
+      <td><%= @product.unity %></td>
+    </tr>
+    <tr>
+      <td align="right"><strong>Supplier:</strong></td>
+      <td><%= @product.supplier %></td>
+    </tr>
+    <tr>
+      <td align="right"><strong>Type:</strong></td>
+      <td><%= @product.product_type %></td>
+    </tr>
+    <tr>
+      <td align="right"><strong>Brand:</strong></td>
+      <td><%= @product.brand %></td>
+    </tr>
+    <tr>
+      <td align="right"><strong>Weight:</strong></td>
+      <td><%= number_to_currency( @product.weight, separator: ",", delimiter: "", precision: 2, format: "%n") %></td>
+    </tr>
+    <tr>
+      <td align="right"><strong>Size:</strong></td>
+      <td><%= @product.size %></td>
+    </tr>
+    <tr>
+      <td align="right"><strong>State:</strong></td>
+      <td><%= @product.current_state.description %></td>
+    </tr>
+    <tr>
+      <td align="right"><strong>Stock:</strong></td>
+      <td><%= number_to_currency( @product.stock, separator: ",", delimiter: "", precision: 2, format: "%n") %></td>
+    </tr>
+    <tr>
+      <td align="right"><strong>Max stock:</strong></td>
+      <td><%= number_to_currency( @product.max_stock , separator: ",", delimiter: "", precision: 2, format: "%n") %></td>
+    </tr>
+    <tr>
+      <td align="right"><strong>Min stock:</strong></td>
+      <td><%= number_to_currency( @product.min_stock , separator: ",", delimiter: "", precision: 2, format: "%n") %></td>
+    </tr>
+    <tr>
+      <td align="right"><strong>Purchase stock:</strong></td>
+      <td><%= number_to_currency( @product.purchase_stock , separator: ",", delimiter: "", precision: 2, format: "%n") %></td>
+    </tr>
+    <tr>
+      <td align="right"><strong>Composition:</strong></td>
+      <td><%= @product.composition %></td>
+    </tr>
+    <tr>
+      <td align="right"><strong>Raw material:</strong></td>
+      <td><%= @product.raw_material %></td>
+    </tr>
+    <tr>
+      <td align="right"><strong>Office supplies:</strong></td>
+      <td><%= @product.office_supplies %></td>
+    </tr>
+    <tr>
+      <td align="right"><strong>For sale:</strong></td>
+      <td><%= @product.for_sale %></td>
+    </tr>
+    <tr>
+      <td align="right"><strong>Currency:</strong></td>
+      <td><%= @product.currency %></td>
+    </tr>
+    <tr>
+      <td align="right"><strong>Observations:</strong></td>
+      <td><%= @product.observations %></td>
+    </tr>
+    <tr>
+      <td align="right"><strong>Cost:</strong></td>
+      <td><%= number_to_currency( @product.cost , separator: ",", delimiter: "", precision: 2, format: "%n") %></td>
+    </tr>
+    <tr>
+      <td align="right"><strong>Sale price:</strong></td>
+      <td><%= number_to_currency( @product.sale_price , separator: ",", delimiter: "", precision: 2, format: "%n") %></td>
+    </tr>
+    <tr>
+      <td align="right"><strong>Ipi:</strong></td>
+      <td><%= number_to_currency( @product.ipi , separator: ",", delimiter: "", precision: 2, format: "%n") %></td>
+    </tr>
+    <tr>
+      <td align="right"><strong>Category:</strong></td>
+      <td><%= @product.category %></td>
+    </tr>
+    <tr>
+      <td align="right"><strong>Unit Factor:</strong></td>
+      <td><%= @product.unity_factor %></td>
+    </tr>
+    <tr>
+      <td align="right"><strong>Gender:</strong></td>
+      <td><%= @product.gender %></td>
+    </tr>
+  </tbody>
+</table>
+
+<%= link_to 'Edit', edit_product_path(@product), class: 'btn btn-success' %> |
+<%= link_to 'Back', products_path, class: 'btn btn-primary' %>

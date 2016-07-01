@@ -1,0 +1,13 @@
+--Fixed letter I
+Code
+Description
+Barcode
+NCM Code
+IPI
+Gender
+Unity
+Value
+Barcode (yes, again...)
+Unity (yes, again...)
+Value (yes, again...)
+Quantity

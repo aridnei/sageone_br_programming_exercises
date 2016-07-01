@@ -1,0 +1,53 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  code: MyString
+  description: MyString
+  barcode: MyString
+  ncm: MyString
+  unity: MyString
+  supplier: MyString
+  type: 
+  brand: MyString
+  weight: 1.5
+  current_state_id: 1
+  stock: 1.5
+  max_stock: 1.5
+  min_stock: 1.5
+  purchase_stock: 1.5
+  composition: MyString
+  raw_material: MyString
+  office_supplies: MyString
+  for_sale: MyString
+  currency: MyString
+  observations: MyString
+  cost: 1.5
+  sale_price: 1.5
+  ipi: 1.5
+  category: MyString
+
+two:
+  code: MyString
+  description: MyString
+  barcode: MyString
+  ncm: MyString
+  unity: MyString
+  supplier: MyString
+  type: 
+  brand: MyString
+  weight: 1.5
+  current_state_id: 1
+  stock: 1.5
+  max_stock: 1.5
+  min_stock: 1.5
+  purchase_stock: 1.5
+  composition: MyString
+  raw_material: MyString
+  office_supplies: MyString
+  for_sale: MyString
+  currency: MyString
+  observations: MyString
+  cost: 1.5
+  sale_price: 1.5
+  ipi: 1.5
+  category: MyString

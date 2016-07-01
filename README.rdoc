@@ -1,0 +1,5 @@
+== README
+
+- Requirements
+# rake db:migrate
+# rake db:seed
